@@ -27,6 +27,7 @@ public class Startup : MonoBehaviour {
         Constants.timeScale = this.timeScale;
         Constants.GroupBoundaryIDArr = new List<float>();
         Constants.NeuronColorList = new List<Color>();
+        Constants.TissueSlices = new List<TissueSlice>();
         this.keyHeldDown = "0";
         this.keyHeldDownPrev = "0";
         keys = new List<string>();
@@ -39,7 +40,7 @@ public class Startup : MonoBehaviour {
             GameObject obj = Instantiate(tissueSlice, new Vector3(0f,0f, 0f), Quaternion.identity);
             TissueSlice slice = obj.GetComponent<TissueSlice>();
             slice.Initialize(i, i*3000, 0f);
-            //Constants.TissueSlices.Add(slice);
+            Constants.TissueSlices.Add(slice);
         }
 
         this.holdingDownKey = false;
